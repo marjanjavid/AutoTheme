@@ -1,6 +1,7 @@
 import 'package:automatictheme/api.dart';
 import 'package:flutter/material.dart';
 import 'package:automatictheme/app_theme.dart';
+import 'package:automatictheme/home_page.dart';
 
 void main() async => runApp(MyApp(appTheme: fetchAppTheme()));
 
@@ -14,14 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: appTheme.name,
         theme: _buildThemeData(appTheme),
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('Welcome to Flutter'),
-          ),
-          body: Center(
-            child: Text(appTheme.name),
-          ),
-        ));
+        home: HomePage());
   }
 
   _buildThemeData(AppTheme appTheme) {
